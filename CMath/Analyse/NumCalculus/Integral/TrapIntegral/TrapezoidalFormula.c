@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "IntegrandFcn.h"
 
 //(复合形式)梯形法计算公式
 double TrapezoidalFormula(float Ceiling, float Lower, float H, int N)
