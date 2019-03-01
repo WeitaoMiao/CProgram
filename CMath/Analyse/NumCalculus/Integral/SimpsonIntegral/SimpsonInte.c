@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "FcnBeInte.h"
 
-//Simpson数值积分算法
+//(复合形式)Simpson数值积分算法
 double SimpsonInte(float UpperLim, float LowerLim, int NumInterval)
 {
     //变量定义
