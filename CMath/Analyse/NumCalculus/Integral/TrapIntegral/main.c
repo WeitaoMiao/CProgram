@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-//梯形公式
+//(复合形式)梯形公式
 double TrapezoidalFormula(float Ceiling, float Lower, float H, int N);
 //被积函数
 double IntegrandFcn(float x);
