@@ -2,11 +2,6 @@
 #include <math.h>
 #include "TrapezoidalFormula.h"
 
-//(复合形式)梯形公式
-double TrapezoidalFormula(float Ceiling, float Lower, float H, int N);
-//被积函数
-double IntegrandFcn(float x);
-
 int main(void)
 {
     //变量定义
@@ -43,18 +38,4 @@ int main(void)
     
     printf("\n");
     return 0;
-}
-
-//被积函数
-double IntegrandFcn(float x)
-{
-    double FcnResult;
-    
-    //初始化
-    FcnResult = 0;
-    
-    //被积函数
-    FcnResult = sin(x);
-    
-    return FcnResult;
 }
