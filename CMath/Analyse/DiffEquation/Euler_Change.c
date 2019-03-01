@@ -1,19 +1,11 @@
 /*梯形方法(改进Euler方法): 数值求解ODE(常微分方程)的柯西问题(初值问题)*/
-/*作者: 游里工夫独造微*/
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <malloc.h>
 #include <math.h>
 
-
-
 #define Pi 3.1415926
-
-
 
 //打印信息函数
 int Print();
@@ -25,8 +17,6 @@ float Euler(float t, float u_n_last, float u_n, float h);
 float Iteration(float t, float u_n_last, float u_n, float h);
 //梯形算法(改进Euler算法)
 float Euler_change(float t, float u_n_last, float u_n, float h);
-
-
 
 int main(void)
 {
@@ -60,8 +50,6 @@ int main(void)
 	fc = 0;
 	fp = NULL;
 	
-	
-	
 	//输入所需信息
 	Print();
 	printf("请输入以下信息:\n");
@@ -78,8 +66,6 @@ int main(void)
 	scanf("%f", &h);
 	printf("\n");
 	
-	
-	
 	//判断所需信息是否符合正确范围以及判断后的处理
 	if( (t0>=0) && (tmax>t0) && (h>0) && (h<(tmax-t0)) )
 	{
@@ -90,9 +76,6 @@ int main(void)
 		//动态申请带球函数值向量的内存大小, 初始化申请的内存
 		u = (float*)malloc(sizeof(float)*number_t);
 		memset(t, 0, sizeof(float)*number_t);
-		
-		
-		
 		
 		t[0] = t0;
 		u[0] = u0;
@@ -109,8 +92,6 @@ int main(void)
 		{
 			printf("\n注: 因为步长的原因, 计算的最后一个值并非u(tmax), 而是u(t0+nh), 其中n为步长的总数\n\n\n");
 		}
-		
-		
 		
 		//将计算的结果数据, 存储到文件中
 		fp = fopen("Euler_change.txt", "w");
@@ -138,8 +119,6 @@ int main(void)
 			exit(0);
 		}
 		
-		
-		
 		//释放之前申请的内存 
 		free(t);
 		free(u);
@@ -153,8 +132,6 @@ int main(void)
 	return 0;
 }
 
-
-
 //打印信息函数
 int Print()
 {
@@ -163,8 +140,6 @@ int Print()
 	
 	return 0;
 }
-
-
 
 /*----------------------------------------------------------*/
 //用于数值计算的函数, 可自己根据问题进行修改
@@ -181,8 +156,6 @@ float Function(float t, float u_n_last)
 	return f_tu;
 }
 
-
-
 //Euler算法
 float Euler(float t, float u_n_last, float u_n, float h)
 {
@@ -192,8 +165,6 @@ float Euler(float t, float u_n_last, float u_n, float h)
 	return u_n;
 }
 /*----------------------------------------------------------*/
-
-
 
 /*----------------------------------------------------------*/
 //迭代算法
@@ -213,8 +184,6 @@ float Iteration(float t, float u_n_last, float u_n, float h)
 	return u_n;
 }
 
-
-
 //梯形算法(改进型Euler算法)
 float Euler_change(float t, float u_n_last, float u_n, float h)
 {	
@@ -227,5 +196,3 @@ float Euler_change(float t, float u_n_last, float u_n, float h)
 	return u_n;
 }
 /*----------------------------------------------------------*/
-
-
